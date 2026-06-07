@@ -77,9 +77,10 @@ export const getExpenses = async (req: Request, res: Response) => {
 };
 
 export const getExpenseById = async (req: Request, res: Response) => {
+  const id = req.params.id as string;
   const expense = await prisma.expense.findFirst({
     where: {
-      id: req.params.id,
+      id,
 
       userId: req.user!.userId,
     },
@@ -95,9 +96,10 @@ export const getExpenseById = async (req: Request, res: Response) => {
 };
 
 export const updateExpense = async (req: Request, res: Response) => {
+  const id = req.params.id as string;
   const existing = await prisma.expense.findFirst({
     where: {
-      id: req.params.id,
+      id,
       userId: req.user!.userId,
     },
   });
@@ -110,7 +112,7 @@ export const updateExpense = async (req: Request, res: Response) => {
 
   const updated = await prisma.expense.update({
     where: {
-      id: req.params.id,
+      id,
     },
 
     data: {
@@ -126,9 +128,10 @@ export const updateExpense = async (req: Request, res: Response) => {
 };
 
 export const deleteExpense = async (req: Request, res: Response) => {
+  const id = req.params.id as string;
   const existing = await prisma.expense.findFirst({
     where: {
-      id: req.params.id,
+      id,
       userId: req.user!.userId,
     },
   });
@@ -141,7 +144,7 @@ export const deleteExpense = async (req: Request, res: Response) => {
 
   await prisma.expense.delete({
     where: {
-      id: req.params.id,
+      id,
     },
   });
 
