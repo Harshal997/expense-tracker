@@ -1,73 +1,126 @@
-# React + TypeScript + Vite
+# Expense Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full-stack expense tracking application built with React, Node.js, Express, PostgreSQL, Prisma, and TypeScript.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+### Authentication
+- User Registration
+- User Login
+- JWT Authentication
+- Protected Routes
 
-## React Compiler
+### Expense Management
+- Add Expense
+- Edit Expense
+- Delete Expense
+- View Expense History
+- Search Expenses
+- Filter by Category
+- Pagination
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Dashboard
+- Total Expenses
+- Monthly Expenses
+- Recent Transactions
+- Expense Breakdown Pie Chart
 
-## Expanding the ESLint configuration
+### UI
+- Responsive Design
+- Dark Mode
+- Form Validation with Zod
+- Loading States
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Tech Stack
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Frontend
+- React
+- TypeScript
+- Vite
+- React Hook Form
+- Zod
+- Tailwind CSS
+- Recharts
+- Axios
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Backend
+- Node.js
+- Express
+- TypeScript
+- Prisma ORM
+- PostgreSQL
+- JWT Authentication
+- Bcrypt
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Live Demo
+
+Frontend:
+https://expense-tracker-git-main-harshal997s-projects.vercel.app/
+
+Backend:
+https://expense-tracker-9i54.onrender.com/
+
+## Local Setup
+
+### Clone Repository
+
+```bash
+git clone <repo-url>
+cd expense-tracker
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Backend
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+```bash
+cd backend
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+npm install
+
+cp .env.example .env
+
+npm run prisma:migrate
+
+npm run dev
 ```
+
+### Frontend
+
+```bash
+cd frontend
+
+npm install
+
+cp .env.example .env
+
+npm run dev
+```
+
+## Environment Variables
+
+### Backend
+
+```env
+DATABASE_URL=
+JWT_SECRET=
+PORT=5000
+```
+
+### Frontend
+
+```env
+VITE_API_URL=
+```
+
+## Deployment
+
+- Frontend deployed on Vercel
+- Backend deployed on Render
+- PostgreSQL hosted on Render
+
+## Future Improvements
+
+- Budget Management
+- Recurring Expenses
+- Export to CSV
+- Advanced Analytics
+- Email Notifications
