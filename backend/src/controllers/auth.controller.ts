@@ -4,7 +4,11 @@ import bcrypt from "bcrypt";
 import prisma from "../prisma/client";
 import { generateToken } from "../utils/jwt";
 
-export const register = async (req: Request, res: Response, next: NextFunction) => {
+export const register = async (
+  req: Request,
+  res: Response,
+  next: NextFunction,
+) => {
   try {
     const { name, email, password } = req.body;
 
@@ -30,8 +34,11 @@ export const register = async (req: Request, res: Response, next: NextFunction) 
       },
     });
 
+    const token = generateToken(user.id);
+
     return res.status(201).json({
       message: "User registered successfully",
+      token,
       user: {
         id: user.id,
         name: user.name,
@@ -43,7 +50,11 @@ export const register = async (req: Request, res: Response, next: NextFunction) 
   }
 };
 
-export const login = async (req: Request, res: Response, next: NextFunction) => {
+export const login = async (
+  req: Request,
+  res: Response,
+  next: NextFunction,
+) => {
   try {
     const { email, password } = req.body;
 
