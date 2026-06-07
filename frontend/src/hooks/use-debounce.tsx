@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 
 export function useDebounce(search: string, delay: number) {
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [debouncedValue, setDebouncedValue] = useState(search);
 
   useEffect(() => {

@@ -31,7 +31,7 @@ const ExpenseModal = ({
     handleSubmit,
     reset,
     formState: { errors },
-  } = useForm<ExpenseFormData>({
+  } = useForm({
     resolver: zodResolver(expenseSchema),
   });
 

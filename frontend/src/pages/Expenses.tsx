@@ -8,7 +8,7 @@ import { type Expense } from "../types/expense";
 const Expenses = () => {
   const [expenses, setExpenses] = useState<Expense[]>([]);
   const [page, setPage] = useState(1);
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [pagination, setPagination] = useState({
     page: 1,
     limit: 10,
