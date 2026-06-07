@@ -55,10 +55,10 @@ A full-stack expense tracking application built with React, Node.js, Express, Po
 ## Live Demo
 
 Frontend:
-<frontend-url>
+https://expense-tracker-git-main-harshal997s-projects.vercel.app/
 
 Backend:
-<backend-url>
+https://expense-tracker-9i54.onrender.com/
 
 ## Local Setup
 
