@@ -36,7 +36,7 @@ const Sidebar = ({ open, onClose }: Props) => {
         `}
       >
         <div className="p-6">
-          <h2 className="font-bold text-xl mb-8 text-black/70">
+          <h2 className="font-bold text-xl mb-8 text-black/70 dark:text-white">
             Expense Tracker
           </h2>
 

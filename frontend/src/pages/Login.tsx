@@ -31,15 +31,15 @@ const Login = () => {
     <div className="min-h-screen flex justify-center items-center">
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="w-full max-w-md p-6 border rounded-lg text-black bg-gray-200 dark:bg-gray-800 dark:border-gray-700 dark:text-white"
+        className="w-full max-w-md p-6 border rounded-lg bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:text-white"
       >
-        <h1 className="text-2xl font-bold mb-4">Login</h1>
+        <h1 className="text-2xl font-medium mb-4">Login</h1>
         <input
           placeholder="Email"
           {...register("email")}
           className="border p-2 w-full mb-2"
         />
-        <p className="text-red-500 mb-4">{errors.email?.message}</p>
+        <p className="text-red-500 mb-2">{errors.email?.message}</p>
         <input
           type="password"
           placeholder="Password"

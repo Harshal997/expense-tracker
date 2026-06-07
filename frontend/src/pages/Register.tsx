@@ -24,7 +24,7 @@ const Register = () => {
       const { data } = await api.post("/auth/register", values);
       login(data.token, data.user);
       navigate("/");
-    } catch {
+    } catch {   
       alert("Invalid credentials");
     }
   };
@@ -33,28 +33,28 @@ const Register = () => {
     <div className="min-h-screen flex justify-center items-center">
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="w-full max-w-md p-6 border rounded-lg text-black bg-gray-200 dark:bg-gray-800 dark:border-gray-700 dark:text-white"
+        className="w-full max-w-md p-6 border rounded-lg dark:bg-gray-800 dark:border-gray-700 dark:text-white"
       >
-        <h1 className="text-2xl font-bold mb-4">Register</h1>
+        <h1 className="text-2xl font-medium mb-4">Register</h1>
         <input
           placeholder="Name"
           {...register("name")}
           className="border p-2 w-full mb-2"
         />
-        <p className="text-red-500 mb-4">{errors.name?.message}</p>
+        <p className="text-red-500 mb-2">{errors.name?.message}</p>
         <input
           placeholder="Email"
           {...register("email")}
           className="border p-2 w-full mb-2"
         />
-        <p className="text-red-500 mb-4">{errors.email?.message}</p>
+        <p className="text-red-500 mb-2">{errors.email?.message}</p>
         <input
           type="password"
           placeholder="Password"
           {...register("password")}
           className="border p-2 w-full mb-2"
         />
-        <p className="text-red-500 mb-4">{errors.password?.message}</p>
+        <p className="text-red-500 mb-2">{errors.password?.message}</p>
         <button className="w-full border p-2">Register</button>
         <Link
           to="/login"
