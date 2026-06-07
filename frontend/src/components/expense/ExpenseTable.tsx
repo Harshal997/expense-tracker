@@ -63,14 +63,14 @@ const ExpenseTable = ({ expenses, onEdit, onDelete }: ExpenseTableProps) => {
                 <div className="flex justify-center gap-2">
                   <button
                     onClick={() => onEdit(expense)}
-                    className="border rounded px-3 py-1 hover:bg-gray-100 hover:cursor-pointer"
+                    className="border rounded px-3 py-1 hover:opacity-80 hover:cursor-pointer"
                   >
                     Edit
                   </button>
 
                   <button
                     onClick={() => onDelete(expense.id)}
-                    className="border rounded px-3 py-1 hover:bg-red-50 hover:cursor-pointer"
+                    className="border rounded px-3 py-1 hover:opacity-80 hover:cursor-pointer"
                   >
                     Delete
                   </button>

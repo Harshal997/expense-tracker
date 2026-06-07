@@ -87,7 +87,7 @@ const Expenses = () => {
           <h1 className="text-2xl font-bold">Expenses</h1>
           <button
             onClick={handleAddExpense}
-            className="px-4 py-2 border rounded-lg hover:bg-gray-100 hover:cursor-pointer"
+            className="px-4 py-2 border rounded-lg hover:opacity-80 hover:cursor-pointer"
           >
             Add Expense
           </button>
