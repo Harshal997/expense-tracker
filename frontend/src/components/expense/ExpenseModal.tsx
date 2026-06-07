@@ -144,7 +144,7 @@ const ExpenseModal = ({
 
             <select
               {...register("category")}
-              className="border rounded-lg p-2 w-full"
+              className="w-full border rounded-lg p-3 dark:bg-gray-800 dark:border-gray-700 dark:text-white"
             >
               <option value="FOOD">Food</option>
               <option value="TRAVEL">Travel</option>
